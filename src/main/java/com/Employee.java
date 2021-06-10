@@ -1,5 +1,7 @@
 package com;
 
+import java.io.Serializable;
+
 public class Employee {
 	int empNo;
 	String empName;
@@ -44,6 +46,11 @@ public class Employee {
 
 	public void setAddress(Address address) {
 		this.address = address;
+	}
+	
+	public String greetEmployee()
+	{
+		return "Hello,  " + this.empName;
 	}
 
 	@Override
