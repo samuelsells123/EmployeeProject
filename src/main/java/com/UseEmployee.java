@@ -2,30 +2,40 @@ package com;
 
 import java.util.Scanner;
 import java.util.logging.Logger;
+import java.util.logging.FileHandler;
 import java.util.InputMismatchException;
 import EmployeeExceptions.TakenEmpNoException;
 
 public class UseEmployee {	
-	private static final Logger LOGGER = Logger.getLogger(UseEmployee.class.getName());
-	
-	public static void main(String[] args) {	
+	public static void main(String[] args){
+		Logger LOGGER = Logger.getLogger(UseEmployee.class.getName());  
+		
+		try {
+			FileHandler fh = new FileHandler("UseEmployee.log", true);
+			LOGGER.addHandler(fh);
+			LOGGER.setUseParentHandlers(false);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
 		LOGGER.info("Logger Name: " + LOGGER.getName());
 		
 		EmployeeServiceImpl service = new EmployeeServiceImpl();
 		
 		try {
-			service.addEmployee("Samuel Sells", 10000.00, "Dallas, TX");
-			service.addEmployee("Rachel Sells", 5000.00, "Dallas, TX");
-			service.addEmployee("Christopher Sells", 45000.00, "Dallas, TX");
-			service.addEmployee("Katherine Sells", 15000.00, "Dallas, TX");
-			service.addEmployee("Kelsey Galvin", 20000.00, "Los Angeles, CA");
-			service.addEmployee("Christina Spear", 30000.00, "Indianapolis, IN");
-			service.addEmployee(9001, "Jimmy Notarealperson", 999999.9, "Nowhere Island, Nowhere");
-			//service.addEmployee(10001, "Johnny Fakename", 0.0, "Nowhere Island, Nowhere");
+			service.addEmployee("Samuel Sells", 600.00, "Dallas, TX");
+			service.addEmployee("Rachel Sells", 300.00, "Dallas, TX");
+			service.addEmployee("Christopher Sells", 2000.00, "Dallas, TX");
+			service.addEmployee("Katherine Sells", 2000.00, "Dallas, TX");
+			service.addEmployee("Kelsey Galvin", 1500.00, "Los Angeles, CA");
+			service.addEmployee("Christina Spear", 2500.00, "Indianapolis, IN");
+			service.addEmployee(9001, "Jimmy Notarealperson", 9999.99, "Nowhere Island, Nowhere");
+			service.addEmployee(9001, "Johnny Fakename", 0.0, "Nowhere Island, Nowhere");
 		}
 		catch(TakenEmpNoException t) {
-			LOGGER.warning("Attempted to Add an Employee With an Already-taken ID Number");
-			System.out.println("DUPLICATE EMPLOYEE NOs NOT ALLOWED");
+			LOGGER.warning(t.getMessage());
+			System.out.println(t.getMessage() + "\n");
 		}
 		
 		Scanner scan = new Scanner(System.in);
@@ -33,30 +43,37 @@ public class UseEmployee {
 		
 		//printProblems();
 		
-		while(select != 6) {
+		while(select != 7) {
 			try {
 				LOGGER.info("Taking in Int Value for Switch Decision Making");
 				
-				System.out.println("1. List All Employees" + "\n" 
-						+ "2. Display Yearly Salary" + "\n"
-						+ "3. Display Specific Employee Details" + "\n"
-						+ "4. Modify the Employee Details" + "\n"
-						+ "5. Delete an Employee" + "\n"
-						+ "6. Exit" + "\n");
+				System.out.println("1. Display All Employee Info" + "\n"  
+						+ "2. List All Employees" + "\n" 
+						+ "3. Display Yearly Salary" + "\n"
+						+ "4. Display Specific Employee Details" + "\n"
+						+ "5. Update Employee Address" + "\n"
+						+ "6. Delete an Employee" + "\n"
+						+ "7. Exit" + "\n");
 				
 				System.out.print("Input Desired Decision: ");
 				select = scan.nextInt();
 				scan.nextLine();
 				
 				switch(select) {
-					case 1:
+				 	case 1:
+				 		LOGGER.info("Displaying All Employee Info");
+				 		System.out.println();
+				 		service.displayAllInfo();
+				 		System.out.println();
+				 		break;
+					case 2:
 						LOGGER.info("Displaying Sorted Employee Names");
 						System.out.println();
 						service.displayAllEmployees();
 						System.out.println();
 						break;
 					
-					case 2:
+					case 3:
 						LOGGER.info("Requesting Employee Name String Value to Obtain Yearly Salary");
 						
 						System.out.print("\n" + "Input Employee Name: ");
@@ -71,7 +88,7 @@ public class UseEmployee {
 						System.out.println("\n" + findSalEmp.getName() + "'s Yearly Salary: $" + service.calculateYearlySalary(findSalEmp) + "\n");
 						break;
 					
-					case 3:
+					case 4:
 						LOGGER.info("Requesting Employee No. Int Value to Display Employee Info");
 						
 						System.out.print("\n" + "Input Employee No: ");
@@ -85,7 +102,7 @@ public class UseEmployee {
 						System.out.println("\n" + service.findByEmployeeNo(empNo) + "\n");
 						break;
 					
-					case 4:
+					case 5:
 						LOGGER.info("Requesting Employee Name String Value to Update Employee Info");
 						
 						System.out.print("\n" + "Input Employee Name: ");
@@ -114,7 +131,7 @@ public class UseEmployee {
 						
 						break;
 					
-					case 5:
+					case 6:
 						LOGGER.info("Requesting Employee Name to Delete From List");
 						
 						System.out.print("\n" + "Input Employee Name: ");
@@ -127,7 +144,7 @@ public class UseEmployee {
 						service.deleteEmployee(service.findByName(deleteName));
 						break;
 					
-					case 6:
+					case 7:
 						System.out.println("\n" + "Exiting program...");
 						break;
 					

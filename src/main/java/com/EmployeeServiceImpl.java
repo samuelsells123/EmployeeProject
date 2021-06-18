@@ -1,6 +1,7 @@
 package com;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.ListIterator;
 
 import EmployeeExceptions.NonexistantEmployeeException;
@@ -30,10 +31,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 	
 	//Further addEmployee functions for ease of adding new employee data
 	public void addEmployee(int empNo, String empName, double salary, String addrString) throws TakenEmpNoException {
-		String[] addrSplit = addrString.replaceAll(" ", "").split(",");
+		String[] addrSplit = addrString.split(",");
 		
 		//Removes whitespace from addressSplit entries and creates a new address with them
-		Address address = new Address(addrSplit[0].replaceAll(" ", ""), addrSplit[1].replaceAll(" ", ""));
+		Address address = new Address(addrSplit[0].trim(), addrSplit[1].trim());
 		
 		//Creates a new employee object and adds it to empList
 		this.addEmployee(new Employee(empNo, empName, salary, address));
@@ -42,6 +43,25 @@ public class EmployeeServiceImpl implements EmployeeService {
 	//This function should be used and will handle empNo logic itself
 	public void addEmployee(String empName, double salary, String addrString) throws TakenEmpNoException {
 		this.addEmployee(nextEmpNo++, empName, salary, addrString);
+	}
+	
+	public void displayAllInfo() {
+		Collections.sort(empList);
+		
+		ListIterator<Employee> itr = empList.listIterator();
+		Employee curEmp;
+		
+		while(itr.hasNext()) {
+			curEmp = itr.next();
+			
+			System.out.println("----------------------------------------" + "\n"
+								+ "Employee # \t: " + curEmp.getEmpNo() + "\n"
+								+ "Name \t\t: " + curEmp.getName() + "\n"
+								+ "Monthly Salary \t: " + curEmp.getSalary() + "\n"
+								+ "Address \t: " + curEmp.getAddress());
+		}
+		
+		System.out.println("----------------------------------------");
 	}
 	
 	public void displayAllEmployees() {

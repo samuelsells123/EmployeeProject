@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-06-18T19:09:43.476056200Z</date>
+  <millis>1624043383476</millis>
+  <nanos>56200</nanos>
+  <sequence>0</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Logger Name: com.UseEmployee</message>
+</record>
+<record>
+  <date>2021-06-18T19:09:43.514953800Z</date>
+  <millis>1624043383514</millis>
+  <nanos>953800</nanos>
+  <sequence>1</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Taking in Int Value for Switch Decision Making</message>
+</record>
+<record>
+  <date>2021-06-18T19:09:49.912481700Z</date>
+  <millis>1624043389912</millis>
+  <nanos>481700</nanos>
+  <sequence>2</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Displaying All Employee Info</message>
+</record>
+<record>
+  <date>2021-06-18T19:09:49.914476300Z</date>
+  <millis>1624043389914</millis>
+  <nanos>476300</nanos>
+  <sequence>3</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Taking in Int Value for Switch Decision Making</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-06-18T19:20:32.787130100Z</date>
+  <millis>1624044032787</millis>
+  <nanos>130100</nanos>
+  <sequence>0</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Logger Name: com.UseEmployee</message>
+</record>
+<record>
+  <date>2021-06-18T19:20:32.826026300Z</date>
+  <millis>1624044032826</millis>
+  <nanos>26300</nanos>
+  <sequence>1</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Taking in Int Value for Switch Decision Making</message>
+</record>
+<record>
+  <date>2021-06-18T19:20:35.265986900Z</date>
+  <millis>1624044035265</millis>
+  <nanos>986900</nanos>
+  <sequence>2</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Displaying All Employee Info</message>
+</record>
+<record>
+  <date>2021-06-18T19:20:35.267980800Z</date>
+  <millis>1624044035267</millis>
+  <nanos>980800</nanos>
+  <sequence>3</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Taking in Int Value for Switch Decision Making</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-06-18T19:21:48.930507600Z</date>
+  <millis>1624044108930</millis>
+  <nanos>507600</nanos>
+  <sequence>0</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Logger Name: com.UseEmployee</message>
+</record>
+<record>
+  <date>2021-06-18T19:21:48.971398600Z</date>
+  <millis>1624044108971</millis>
+  <nanos>398600</nanos>
+  <sequence>1</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Taking in Int Value for Switch Decision Making</message>
+</record>
+<record>
+  <date>2021-06-18T19:21:50.817705100Z</date>
+  <millis>1624044110817</millis>
+  <nanos>705100</nanos>
+  <sequence>2</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Displaying All Employee Info</message>
+</record>
+<record>
+  <date>2021-06-18T19:21:50.819699400Z</date>
+  <millis>1624044110819</millis>
+  <nanos>699400</nanos>
+  <sequence>3</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Taking in Int Value for Switch Decision Making</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-06-18T19:22:01.975879300Z</date>
+  <millis>1624044121975</millis>
+  <nanos>879300</nanos>
+  <sequence>0</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Logger Name: com.UseEmployee</message>
+</record>
+<record>
+  <date>2021-06-18T19:22:02.012954500Z</date>
+  <millis>1624044122012</millis>
+  <nanos>954500</nanos>
+  <sequence>1</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Taking in Int Value for Switch Decision Making</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-06-18T19:22:15.512820100Z</date>
+  <millis>1624044135512</millis>
+  <nanos>820100</nanos>
+  <sequence>0</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Logger Name: com.UseEmployee</message>
+</record>
+<record>
+  <date>2021-06-18T19:22:15.552712500Z</date>
+  <millis>1624044135552</millis>
+  <nanos>712500</nanos>
+  <sequence>1</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Taking in Int Value for Switch Decision Making</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-06-18T19:23:06.016372900Z</date>
+  <millis>1624044186016</millis>
+  <nanos>372900</nanos>
+  <sequence>0</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Logger Name: com.UseEmployee</message>
+</record>
+<record>
+  <date>2021-06-18T19:23:06.054272400Z</date>
+  <millis>1624044186054</millis>
+  <nanos>272400</nanos>
+  <sequence>1</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Taking in Int Value for Switch Decision Making</message>
+</record>
+<record>
+  <date>2021-06-18T19:23:08.205932800Z</date>
+  <millis>1624044188205</millis>
+  <nanos>932800</nanos>
+  <sequence>2</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Displaying All Employee Info</message>
+</record>
+<record>
+  <date>2021-06-18T19:23:08.207927200Z</date>
+  <millis>1624044188207</millis>
+  <nanos>927200</nanos>
+  <sequence>3</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Taking in Int Value for Switch Decision Making</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-06-18T19:24:30.151971700Z</date>
+  <millis>1624044270151</millis>
+  <nanos>971700</nanos>
+  <sequence>0</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Logger Name: com.UseEmployee</message>
+</record>
+<record>
+  <date>2021-06-18T19:24:30.193859700Z</date>
+  <millis>1624044270193</millis>
+  <nanos>859700</nanos>
+  <sequence>1</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Taking in Int Value for Switch Decision Making</message>
+</record>
+<record>
+  <date>2021-06-18T19:24:32.392109900Z</date>
+  <millis>1624044272392</millis>
+  <nanos>109900</nanos>
+  <sequence>2</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>WARNING</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Invalid Input Attempted. Program caught InputMismatchException and started program over at root menu.</message>
+</record>
+<record>
+  <date>2021-06-18T19:24:32.393106900Z</date>
+  <millis>1624044272393</millis>
+  <nanos>106900</nanos>
+  <sequence>3</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Taking in Int Value for Switch Decision Making</message>
+</record>
+<record>
+  <date>2021-06-18T19:24:40.901351Z</date>
+  <millis>1624044280901</millis>
+  <nanos>351000</nanos>
+  <sequence>4</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Taking in Int Value for Switch Decision Making</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-06-18T19:31:01.642763700Z</date>
+  <millis>1624044661642</millis>
+  <nanos>763700</nanos>
+  <sequence>0</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Logger Name: com.UseEmployee</message>
+</record>
+<record>
+  <date>2021-06-18T19:31:01.658718900Z</date>
+  <millis>1624044661658</millis>
+  <nanos>718900</nanos>
+  <sequence>1</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>WARNING</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Attempted to Add an Employee With an Already-taken ID Number</message>
+</record>
+<record>
+  <date>2021-06-18T19:31:01.681657600Z</date>
+  <millis>1624044661681</millis>
+  <nanos>657600</nanos>
+  <sequence>2</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Taking in Int Value for Switch Decision Making</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-06-18T19:33:57.789907900Z</date>
+  <millis>1624044837789</millis>
+  <nanos>907900</nanos>
+  <sequence>0</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Logger Name: com.UseEmployee</message>
+</record>
+<record>
+  <date>2021-06-18T19:33:57.810845700Z</date>
+  <millis>1624044837810</millis>
+  <nanos>845700</nanos>
+  <sequence>1</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>WARNING</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Attempted to Add an Employee With an Already-taken ID Number</message>
+</record>
+<record>
+  <date>2021-06-18T19:33:57.840765400Z</date>
+  <millis>1624044837840</millis>
+  <nanos>765400</nanos>
+  <sequence>2</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Taking in Int Value for Switch Decision Making</message>
+</record>

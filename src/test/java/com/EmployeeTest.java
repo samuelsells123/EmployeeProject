@@ -23,10 +23,10 @@ class EmployeeTest {
 		empList = new ArrayList<Employee>();
 		
 		try {
-			empList.add(new Employee(10003, "Samuel Sells", 15000.00, new Address("Dallas","TX")));
-			empList.add(new Employee(10002, "Katherine Sells", 45000.00, new Address("Dallas","TX")));
-			empList.add(new Employee(10004, "Rachel Sells", 5000.00, new Address("Dallas","TX")));
-			empList.add(new Employee(10001, "Christopher Sells", 45000.00, new Address("Dallas","TX")));
+			empList.add(new Employee(10003, "Samuel Sells", 600.00, new Address("Dallas","TX")));
+			empList.add(new Employee(10002, "Katherine Sells", 2000.00, new Address("Dallas","TX")));
+			empList.add(new Employee(10004, "Rachel Sells", 300.00, new Address("Dallas","TX")));
+			empList.add(new Employee(10001, "Christopher Sells", 2000.00, new Address("Dallas","TX")));
 			
 			for(int i = 0; i < empList.size(); i++) {
 				service.addEmployee(empList.get(i));
@@ -40,18 +40,38 @@ class EmployeeTest {
 	//displayAllEmployees test
 	@Test
 	void testDisplayAllEmployees() {
-		PrintStream outStream = System.out;
-		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-		System.setOut(new PrintStream(outContent));
-		
-		String expectedOutput = "Employee List:" + "\n";
-		
+		//sorts collection before printing out
 		Collections.sort(empList);
+		
+		//saves starting system output
+		PrintStream outStream = System.out;
+		
+		//creates ByteArrayOuputStream and sets it to receive console output
+		ByteArrayOutputStream printContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(printContent));
+		
+		/*String expectedOutput = "Employee List:" + "\n";
 		
 		Iterator<Employee> itr = empList.iterator();
 		while(itr.hasNext()) {
 			expectedOutput += itr.next().getName() + "\n";
+		}*/
+		
+		//prints expected output and saves it to String expectedOutput
+		System.out.println("Employee List:");
+		
+		Iterator<Employee> itr = empList.iterator();
+		while(itr.hasNext()) {
+			System.out.println(itr.next().getName());
 		}
+		
+		String expectedOutput = printContent.toString();
+		
+		
+		//creates another ByteArrayOutputStream and switches it to receive console output.
+		//this is necessary because this causes outContent to start as a blank slate
+		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+		System.setOut(new PrintStream(outContent));
 		
 		service.displayAllEmployees();
 		
@@ -60,19 +80,23 @@ class EmployeeTest {
 		
 		System.out.println("-------------------------");
 		System.out.println(expectedOutput);
+		//for(int i = 0; i < expectedOutput.length(); i++)
+			//System.out.println(expectedOutput.charAt(i));
 		System.out.println("-------------------------");
 		System.out.println(functionOutput);
+		//for(int i = 0; i < functionOutput.length(); i++)
+			//System.out.println(functionOutput.charAt(i));
 		System.out.println("-------------------------");
 		System.out.println("Equals? -> " + expectedOutput.equals(functionOutput));
 		System.out.println("-------------------------");*/
 		
-		assertEquals(expectedOutput.replaceAll("[^a-zA-Z0-9]", ""), outContent.toString().replaceAll("[^a-zA-Z0-9]", ""));
-		//assertTrue(outContent.toString().replaceAll("[^a-zA-Z0-9]", " ").equals(expectedOutput.replaceAll("[^a-zA-Z0-9]", " ")));
+		//assertEquals(expectedOutput, outContent.toString());
+		
+		assertTrue(outContent.toString().equals(expectedOutput));
 		System.setOut(outStream);
 	}
 	
 	//calculateYearlySalary test
-	@SuppressWarnings("deprecation")
 	@Test
 	void testCalculateYearlySalary() {
 		double returnSalary = service.calculateYearlySalary(empList.get(0));
@@ -92,7 +116,6 @@ class EmployeeTest {
 	}
 	
 	//updateEmployee test
-	@SuppressWarnings("deprecation")
 	@Test
 	void testUpdateEmployee() {
 		try {
