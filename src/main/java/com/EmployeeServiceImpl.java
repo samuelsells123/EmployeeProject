@@ -42,6 +42,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 	
 	//This function should be used and will handle empNo logic itself
 	public void addEmployee(String empName, double salary, String addrString) throws TakenEmpNoException {
+		while(empNoList.contains(nextEmpNo)) {
+			nextEmpNo++;
+		}
+		
 		this.addEmployee(nextEmpNo++, empName, salary, addrString);
 	}
 	
@@ -57,7 +61,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 			System.out.println("----------------------------------------" + "\n"
 								+ "Employee # \t: " + curEmp.getEmpNo() + "\n"
 								+ "Name \t\t: " + curEmp.getName() + "\n"
-								+ "Monthly Salary \t: " + curEmp.getSalary() + "\n"
+								+ "Monthly Salary \t: $" + curEmp.getSalary() + "\n"
 								+ "Address \t: " + curEmp.getAddress());
 		}
 		
@@ -67,45 +71,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public void displayAllEmployees() {
 		System.out.println("Employee List:");
 		empList.stream().sorted().forEach(Employee -> System.out.println(Employee.getName()));
-		
-		/*ListIterator<Employee> itr = empList.listIterator();
-		
-		while(itr.hasNext())
-			System.out.println(itr.next());*/
 	}
 	
 	public double calculateYearlySalary(Employee e1) {
 		return 12 * e1.getSalary();
 	}
-	
-	/*public Boolean exists(String empName) {
-		ListIterator<Employee> itr = empList.listIterator();
-		Employee curEmp;
-		Boolean empExists = false;
-		
-		while(itr.hasNext()) {
-			curEmp = itr.next();
-			
-			if(empName.equals(curEmp.getName()))
-				return true;
-		}
-		
-		return empExists;
-	}*/
-	
-	/*public Boolean exists(int empNo) {
-		ListIterator<Employee> itr = empList.listIterator();
-		Employee curEmp;
-		
-		while(itr.hasNext()) {
-			curEmp = itr.next();
-			
-			if(empNo == curEmp.getEmpNo())
-				return true;
-		}
-		
-		return false;
-	}*/
 	
 	public Employee findByName(String empName) throws NonexistantEmployeeException {
 		ListIterator<Employee> itr = empList.listIterator();

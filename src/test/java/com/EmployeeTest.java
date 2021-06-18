@@ -50,13 +50,6 @@ class EmployeeTest {
 		ByteArrayOutputStream printContent = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(printContent));
 		
-		/*String expectedOutput = "Employee List:" + "\n";
-		
-		Iterator<Employee> itr = empList.iterator();
-		while(itr.hasNext()) {
-			expectedOutput += itr.next().getName() + "\n";
-		}*/
-		
 		//prints expected output and saves it to String expectedOutput
 		System.out.println("Employee List:");
 		
@@ -74,23 +67,6 @@ class EmployeeTest {
 		System.setOut(new PrintStream(outContent));
 		
 		service.displayAllEmployees();
-		
-		/*String functionOutput = outContent.toString();
-		System.setOut(outStream);
-		
-		System.out.println("-------------------------");
-		System.out.println(expectedOutput);
-		//for(int i = 0; i < expectedOutput.length(); i++)
-			//System.out.println(expectedOutput.charAt(i));
-		System.out.println("-------------------------");
-		System.out.println(functionOutput);
-		//for(int i = 0; i < functionOutput.length(); i++)
-			//System.out.println(functionOutput.charAt(i));
-		System.out.println("-------------------------");
-		System.out.println("Equals? -> " + expectedOutput.equals(functionOutput));
-		System.out.println("-------------------------");*/
-		
-		//assertEquals(expectedOutput, outContent.toString());
 		
 		assertTrue(outContent.toString().equals(expectedOutput));
 		System.setOut(outStream);

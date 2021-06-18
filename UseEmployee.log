@@ -405,3 +405,83 @@
   <thread>1</thread>
   <message>Taking in Int Value for Switch Decision Making</message>
 </record>
+<record>
+  <date>2021-06-18T21:12:42.253411300Z</date>
+  <millis>1624050762253</millis>
+  <nanos>411300</nanos>
+  <sequence>3</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>WARNING</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+</record>
+<record>
+  <date>2021-06-18T21:12:42.256402700Z</date>
+  <millis>1624050762256</millis>
+  <nanos>402700</nanos>
+  <sequence>4</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Taking in Int Value for Switch Decision Making</message>
+</record>
+<record>
+  <date>2021-06-18T21:12:42.258397500Z</date>
+  <millis>1624050762258</millis>
+  <nanos>397500</nanos>
+  <sequence>5</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>WARNING</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+</record>
+<record>
+  <date>2021-06-18T21:12:42.258397500Z</date>
+  <millis>1624050762258</millis>
+  <nanos>397500</nanos>
+  <sequence>6</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Taking in Int Value for Switch Decision Making</message>
+</record>
+<record>
+  <date>2021-06-18T21:12:42.258397500Z</date>
+  <millis>1624050762258</millis>
+  <nanos>397500</nanos>
+  <sequence>7</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>WARNING</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+</record>
+<record>
+  <date>2021-06-18T21:12:42.258397500Z</date>
+  <millis>1624050762258</millis>
+  <nanos>397500</nanos>
+  <sequence>8</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>INFO</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Taking in Int Value for Switch Decision Making</message>
+</record>
+<record>
+  <date>2021-06-18T21:12:42.258397500Z</date>
+  <millis>1624050762258</millis>
+  <nanos>397500</nanos>
+  <sequence>9</sequence>
+  <logger>com.UseEmployee</logger>
+  <level>WARNING</level>
+  <class>com.UseEmployee</class>
+  <method>main</method>
+  <thread>1</thread>
+</record>

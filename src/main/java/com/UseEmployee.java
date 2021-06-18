@@ -8,6 +8,7 @@ import EmployeeExceptions.TakenEmpNoException;
 
 public class UseEmployee {	
 	public static void main(String[] args){
+		//set up logger to output log to UseEmployee.log
 		Logger LOGGER = Logger.getLogger(UseEmployee.class.getName());  
 		
 		try {
@@ -21,6 +22,7 @@ public class UseEmployee {
 		
 		LOGGER.info("Logger Name: " + LOGGER.getName());
 		
+		//starts employee service and adds several employees
 		EmployeeServiceImpl service = new EmployeeServiceImpl();
 		
 		try {
@@ -38,10 +40,9 @@ public class UseEmployee {
 			System.out.println(t.getMessage() + "\n");
 		}
 		
+		//takes in user input and calls desired function
 		Scanner scan = new Scanner(System.in);
 		int select = 0;
-		
-		//printProblems();
 		
 		while(select != 7) {
 			try {
@@ -79,10 +80,6 @@ public class UseEmployee {
 						System.out.print("\n" + "Input Employee Name: ");
 						String salaryName = scan.nextLine().trim();
 						
-						/*if(!service.exists(salaryName)) {
-							throw new NonexistantEmployeeException();
-						}*/
-						
 						Employee findSalEmp = service.findByName(salaryName);
 						
 						System.out.println("\n" + findSalEmp.getName() + "'s Yearly Salary: $" + service.calculateYearlySalary(findSalEmp) + "\n");
@@ -95,10 +92,6 @@ public class UseEmployee {
 						int empNo = scan.nextInt();
 						scan.nextLine();
 						
-						/*if(!service.exists(empNo)) {
-							throw new NonexistantEmployeeException();
-						}*/
-						
 						System.out.println("\n" + service.findByEmployeeNo(empNo) + "\n");
 						break;
 					
@@ -109,24 +102,11 @@ public class UseEmployee {
 						String empName = scan.nextLine().trim();
 						Employee updateEmp = service.findByName(empName);
 						
-						/*if(!service.exists(empName)) {
-							throw new NonexistantEmployeeException();
-						}*/
-						
 						System.out.print("\n" + "Input New Address: ");
 						String newAddress = scan.nextLine();
 						System.out.println();
 						updateEmp.setAddress(newAddress);
 						
-						//String[] addrSplit = newAddress.split(",");
-						
-						/*if(addrSplit.length != 2) {
-							throw new InvalidInputAddressException();
-						}*/
-						
-						//Employee updatedEmp = service.findByName(empName);
-						
-						//updatedEmp.setAddress(new Address(addrSplit[0].trim(), addrSplit[1].trim()));
 						service.updateEmployee(updateEmp);
 						
 						break;
@@ -136,10 +116,6 @@ public class UseEmployee {
 						
 						System.out.print("\n" + "Input Employee Name: ");
 						String deleteName = scan.nextLine().trim();
-						
-						/*if(!service.exists(deleteName)) {
-							throw new NonexistantEmployeeException();
-						}*/
 						
 						service.deleteEmployee(service.findByName(deleteName));
 						break;
