@@ -3,21 +3,33 @@ package com;
 import java.util.ArrayList;
 import java.util.ListIterator;
 
+import EmployeeExceptions.NonexistantEmployeeException;
+import EmployeeExceptions.TakenEmpNoException;
+
 public class EmployeeServiceImpl implements EmployeeService {
 	
-	static ArrayList<Employee> empList;
+	private static ArrayList<Employee> empList;
+	private static ArrayList<Integer> empNoList;
+	private int nextEmpNo;
 	
 	//Initializes empList and fills it with data of several employees 
 	public EmployeeServiceImpl() {
-		empList = new ArrayList<>();
+		empList = new ArrayList<Employee>();
+		empNoList = new ArrayList<Integer>();
+		nextEmpNo = 10001;
 	}
 	
-	public void addEmployee(Employee e1) {
+	//Adds Employee
+	public void addEmployee(Employee e1) throws TakenEmpNoException {
+		if(empNoList.contains(e1.getEmpNo()))
+			throw new TakenEmpNoException();
+		
 		empList.add(e1);
+		empNoList.add(e1.getEmpNo());
 	}
 	
-	//Second addEmployee function for ease of adding new employee data
-	public void addEmployee(int empNo, String empName, double salary, String addrString) {
+	//Further addEmployee functions for ease of adding new employee data
+	public void addEmployee(int empNo, String empName, double salary, String addrString) throws TakenEmpNoException {
 		String[] addrSplit = addrString.replaceAll(" ", "").split(",");
 		
 		//Removes whitespace from addressSplit entries and creates a new address with them
@@ -27,10 +39,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 		this.addEmployee(new Employee(empNo, empName, salary, address));
 	}
 	
+	//This function should be used and will handle empNo logic itself
+	public void addEmployee(String empName, double salary, String addrString) throws TakenEmpNoException {
+		this.addEmployee(nextEmpNo++, empName, salary, addrString);
+	}
+	
 	public void displayAllEmployees() {
-		System.out.println("\n" + "Employee List:");
-		empList.forEach(Employee -> System.out.println(Employee.getName()));
-		System.out.println();
+		System.out.println("Employee List:");
+		empList.stream().sorted().forEach(Employee -> System.out.println(Employee.getName()));
 		
 		/*ListIterator<Employee> itr = empList.listIterator();
 		
@@ -39,10 +55,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 	
 	public double calculateYearlySalary(Employee e1) {
-		return e1.getSalary();
+		return 12 * e1.getSalary();
 	}
 	
-	public Boolean exists(String empName) {
+	/*public Boolean exists(String empName) {
 		ListIterator<Employee> itr = empList.listIterator();
 		Employee curEmp;
 		Boolean empExists = false;
@@ -55,9 +71,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 		}
 		
 		return empExists;
-	}
+	}*/
 	
-	public Boolean exists(int empNo) {
+	/*public Boolean exists(int empNo) {
 		ListIterator<Employee> itr = empList.listIterator();
 		Employee curEmp;
 		
@@ -69,31 +85,41 @@ public class EmployeeServiceImpl implements EmployeeService {
 		}
 		
 		return false;
-	}
+	}*/
 	
-	public Employee findByName(String empName) {
+	public Employee findByName(String empName) throws NonexistantEmployeeException {
 		ListIterator<Employee> itr = empList.listIterator();
 		
-		Employee curEmp = itr.next();
+		Employee curEmp;
 		
-		while(!empName.equals(curEmp.getName()))
+		while(itr.hasNext()) {
 			curEmp = itr.next();
+			
+			if(empName.equals(curEmp.getName())) {
+				return curEmp;
+			}
+		}
 		
-		return curEmp;
+		throw new NonexistantEmployeeException();
 	}
 	
-	public Employee findByEmployeeNo(int empNo) {
+	public Employee findByEmployeeNo(int empNo) throws NonexistantEmployeeException {
 		ListIterator<Employee> itr = empList.listIterator();
 		
-		Employee curEmp = itr.next();
+		Employee curEmp;
 		
-		while(curEmp.getEmpNo() != empNo)
+		while(itr.hasNext()) {
 			curEmp = itr.next();
+			
+			if(empNo == curEmp.getEmpNo()) {
+				return curEmp;
+			}
+		}
 		
-		return curEmp;
+		throw new NonexistantEmployeeException();
 	}
 	
-	public void updateEmployee(Employee e1) {
+	public void updateEmployee(Employee e1) throws NonexistantEmployeeException {
 		Employee curEmp = this.findByEmployeeNo(e1.getEmpNo());
 		
 		curEmp.setName(e1.getName());

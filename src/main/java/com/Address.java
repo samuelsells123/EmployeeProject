@@ -1,8 +1,8 @@
 package com;
 
 public class Address {
-	String city;
-	String state;
+	private String city;
+	private String state;
 	
 	public Address(String city, String state) {
 		super();

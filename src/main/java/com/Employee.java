@@ -1,12 +1,12 @@
 package com;
 
-import java.io.Serializable;
+import EmployeeExceptions.InvalidInputAddressException;
 
-public class Employee {
-	int empNo;
-	String empName;
-	double salary;
-	Address address;
+public class Employee implements Comparable<Employee> {
+	private int empNo;
+	private String empName;
+	private double salary;
+	private Address address;
 	
 	public Employee(int empNo, String empName, double salary, Address address) {
 		super();
@@ -48,6 +48,17 @@ public class Employee {
 		this.address = address;
 	}
 	
+	public void setAddress(String address) throws InvalidInputAddressException {
+		String[] addrSplit = address.split(",");
+		
+		if(addrSplit.length != 2) {
+			throw new InvalidInputAddressException();
+		}
+		
+		this.address.setCity(addrSplit[0].trim());
+		this.address.setState(addrSplit[1].trim());
+	}
+	
 	public String greetEmployee()
 	{
 		return "Hello,  " + this.empName;
@@ -56,5 +67,15 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "[emp. No: " + empNo + ", Name: " + empName + ", salary: " + salary + ", address: " + address + "]";
+	}
+
+	@Override
+	public int compareTo(Employee e) {
+		if(this.getEmpNo() > e.getEmpNo())
+			return 1;
+		else if(this.getEmpNo() < e.getEmpNo())
+			return -1;
+		else
+			return 0;
 	}
 }
